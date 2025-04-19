@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f5f7fa; /* Solid light gray for contrast */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.85); /* Less transparent for readability */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #ff0000; /* Red color for logo */
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.logo i {
+    font-size: 30px;
+    margin-right: 10px;
+    color: #ff0000;
+}
+
+.logo span {
+    color: #ff0000;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+}
+
+.container {
+    max-width: 90%;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.converter-card {
+    background: rgba(255, 255, 255, 0.9); /* More opaque for text visibility */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.converter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.converter-card.highlight {
+    border: 2px solid #007bff;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+}
+
+.converter-card h2 {
+    color: #1a1a1a; /* Darker for contrast */
+    margin-bottom: 10px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.converter-card p {
+    color: #333; /* Darker gray for readability */
+    margin-bottom: 15px;
+}
+
+.converter-card input[type="file"] {
+    margin-bottom: 15px;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 5px;
+    width: 100%;
+}
+
+.converter-card button {
+    background: linear-gradient(90deg, #007bff, #00c4ff);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+    width: 100%;
+}
+
+.converter-card button:hover {
+    background: linear-gradient(90deg, #0056b3, #0096cc);
+    transform: scale(1.05);
+}
+
+.progress-bar {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-size: 12px;
+    line-height: 10px;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #007bff, #00c4ff);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.status {
+    color: #333;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #28a745, #34c759);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.3s;
+    width: 100%;
+    text-align: center;
+}
+
+.download-btn:hover {
+    background: linear-gradient(90deg, #218838, #2ba54b);
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1023px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+    .converter-card {
+        width: 45%;
+        min-width: 250px;
+    }
+    .logo {
+        font-size: 22px;
+    }
+    .logo i {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 767px) {
+    .logo {
+        font-size: 20px;
+    }
+    .logo i {
+        font-size: 24px;
+    }
+    .nav-links a {
+        font-size: 14px;
+    }
+    .converter-card {
+        width: 100%;
+        max-width: 350px;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertCraze - File Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-file-alt"></i>
+            <span>ConvertCraze</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#image-to-pdf" data-section="image-to-pdf">Image to PDF</a></li>
+            <li><a href="#pdf-to-word" data-section="pdf-to-word">PDF to Word</a></li>
+            <li><a href="#word-to-pdf" data-section="word-to-pdf">Word to PDF</a></li>
+            <li><a href="#word-to-excel" data-section="word-to-excel">Word to Excel</a></li>
+            <li><a href="#ppt-to-pdf" data-section="ppt-to-pdf">PPT to PDF</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Image to PDF Section -->
+        <section id="image-to-pdf" class="converter-card" data-section="image-to-pdf">
+            <h2>Image to PDF</h2>
+            <p>Convert images (JPEG, PNG) to high-quality PDF.</p>
+            <input type="file" accept="image/*" id="imageInput" multiple>
+            <button onclick="convertImageToPDF()">Convert to PDF</button>
+            <div class="progress-bar" id="imageProgress" style="width: 0%;">0%</div>
+            <p id="imageStatus" class="status"></p>
+            <a id="downloadImageToPDF" class="download-btn" style="display: none;">Download PDF</a>
+        </section>
+
+        <!-- PDF to Word Section -->
+        <section id="pdf-to-word" class="converter-card" data-section="pdf-to-word">
+            <h2>PDF to Word</h2>
+            <p>Convert PDFs to Word (.docx) with Unicode support.</p>
+            <input type="file" accept=".pdf" id="pdfToWordInput">
+            <button onclick="convertPDFToWord()">Convert to Word</button>
+            <div class="progress-bar" id="pdfToWordProgress" style="width: 0%;">0%</div>
+            <p id="pdfToWordStatus" class="status"></p>
+            <a id="downloadPDFToWord" class="download-btn" style="display: none;">Download Word</a>
+        </section>
+
+        <!-- Word to PDF Section -->
+        <section id="word-to-pdf" class="converter-card" data-section="word-to-pdf">
+            <h2>Word to PDF</h2>
+            <p>Convert Word (.doc, .docx) to PDF with basic text.</p>
+            <input type="file" accept=".doc,.docx" id="wordToPDFInput">
+            <button onclick="convertWordToPDF()">Convert to PDF</button>
+            <div class="progress-bar" id="wordToPDFProgress" style="width: 0%;">0%</div>
+            <p id="wordToPDFStatus" class="status"></p>
+            <a id="downloadWordToPDF" class="download-btn" style="display: none;">Download PDF</a>
+        </section>
+
+        <!-- Word to Excel Section -->
+        <section id="word-to-excel" class="converter-card" data-section="word-to-excel">
+            <h2>Word to Excel</h2>
+            <p>Convert Word (.doc, .docx) to Excel (.xlsx) with basic text.</p>
+            <input type="file" accept=".doc,.docx" id="wordToExcelInput">
+            <button onclick="convertWordToExcel()">Convert to Excel</button>
+            <div class="progress-bar" id="wordToExcelProgress" style="width: 0%;">0%</div>
+            <p id="wordToExcelStatus" class="status"></p>
+            <a id="downloadWordToExcel" class="download-btn" style="display: none;">Download Excel</a>
+        </section>
+
+        <!-- PPT to PDF Section -->
+        <section id="ppt-to-pdf" class="converter-card" data-section="ppt-to-pdf">
+            <h2>PPT to PDF</h2>
+            <p>Convert PowerPoint (.ppt, .pptx) to PDF with basic text.</p>
+            <input type="file" accept=".ppt,.pptx" id="pptToPDFInput">
+            <button onclick="convertPPTToPDF()">Convert to PDF</button>
+            <div class="progress-bar" id="pptToPDFProgress" style="width: 0%;">0%</div>
+            <p id="pptToPDFStatus" class="status"></p>
+            <a id="downloadPPTToPDF" class="download-btn" style="display: none;">Download PDF</a>
+        </section>
+    </main>
+
+    <!-- Include Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
